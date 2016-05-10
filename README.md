@@ -3,8 +3,7 @@
 SOSRP Security 安全平台
 
 ```
-
-![PHP 5.4.45|5.4](http://php.net/get/php-5.4.45.tar.bz2/from/a/mirror/)](http://php.net/) ![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-yellow.svg)](https://www.python.org/)
+[![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-yellow.svg)](https://www.python.org/)  [![PHP 5.4.45|5.4](https://img.shields.io/badge/php-v5.4-green.svg)](http://php.net/get/php-5.4.45.tar.bz2/from/a/mirror/)
 
 简介
 ---
