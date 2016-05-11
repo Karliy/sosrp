@@ -57,13 +57,13 @@
 		<div class="cls-content">
 			<div class="cls-content-lg panel">
 				<div class="panel-body">
-					<form action="http://www.themeon.net/nifty/v2.4.1/pages-login.html">
+					<div  id="register">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-male"></i></div>
-										<input type="text" class="form-control" placeholder="全名.." name="name">
+										<input type="text" class="form-control" placeholder="全名.." name="fullname">
 									</div>
 								</div>
 								<div class="form-group">
@@ -88,8 +88,8 @@
 								</div>
 							</div>
 						</div>
-						<button class="btn btn-primary btn-lg btn-block" type="submit">注册</button>
-					</form>
+						<button onclick="register();" class="btn btn-primary btn-lg btn-block" type="submit">注册</button>
+					</div>
 				</div>
 			</div>
 			<div class="pad-ver">
@@ -125,6 +125,45 @@
 
     <!--Background Image [ DEMONSTRATION ]-->
     <script src="<?=base_url().'js/demo/bg-images.js'?>"></script>
+
+    <script type="text/javascript">
+    	function register()
+    	{
+    		var dom = $('register');
+    		var fullname = dom.find('#fullname').val();
+    		var username = dom.find('#username').val();
+    		var email = dom.find('#email').val();
+    		var password = dom.find('#password').val();
+
+			$.ajax({
+				type:'POST',
+				url: '<?=site_url().'/inc/check/register_user'?>',
+				data: {'fullname':fullname,'username':username,'email':email,'password':password},
+				dataType: 'json',
+				timeout: 15000,
+				success: function(msg){
+					if (msg['status']==1){
+				       $.niftyNoty({
+				            type:'success',
+				            container : 'body',
+				            html : '注册成功',
+				            focus: false,
+				            timer:1500
+				        });
+				       	a
+					}else{
+			       		$.niftyNoty({
+				            type:'danger',
+				            container : 'body',
+				            html : '注册失败',
+				            focus: false,
+				            timer:1500
+				        });
+					}
+				}
+			});
+    	}
+    </script>
 
 
 </body>

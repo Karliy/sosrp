@@ -22,5 +22,19 @@ class Check extends CI_Controller
 			$this->session->set_userdata('username',$username);
 		}
 		echo json_encode($obj);
-	} 
+	}
+
+	/**
+	 * 注册用户
+	 * @return [type] [description]
+	 */
+	function register_user()
+	{
+		$full_name = $this->input->post('fullname');
+		$user_name = $this->input->post('username');
+		$email = $this->input->post('email');
+		$password = $this->input->post('passowrd');
+
+		echo json_encode($this->user_model->register_user($full_name,$user_name,$email,$password));
+	}
 }
