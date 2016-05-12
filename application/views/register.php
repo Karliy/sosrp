@@ -63,13 +63,13 @@
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-male"></i></div>
-										<input type="text" class="form-control" placeholder="全名.." name="fullname">
+										<input type="text" class="form-control" placeholder="全名.." id="fullname">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-										<input type="text" class="form-control" placeholder="邮箱.." name="email">
+										<input type="text" class="form-control" placeholder="邮箱.." id="email">
 									</div>
 								</div>
 							</div>
@@ -77,13 +77,13 @@
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-user"></i></div>
-										<input type="text" class="form-control" placeholder="登录名..." name="username">
+										<input type="text" class="form-control" placeholder="登录名..." id="username">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-										<input type="password" class="form-control" placeholder="密码..." name="password">
+										<input type="password" class="form-control" placeholder="密码..." id="password">
 									</div>
 								</div>
 							</div>
@@ -129,7 +129,7 @@
     <script type="text/javascript">
     	function register()
     	{
-    		var dom = $('register');
+    		var dom = $('#register');
     		var fullname = dom.find('#fullname').val();
     		var username = dom.find('#username').val();
     		var email = dom.find('#email').val();
@@ -150,7 +150,6 @@
 				            focus: false,
 				            timer:1500
 				        });
-				       	a
 					}else{
 			       		$.niftyNoty({
 				            type:'danger',

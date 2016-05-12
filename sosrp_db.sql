@@ -4,6 +4,7 @@
  */
 create table sosrp_users(
 	SRP_USER_ID int(11) not null primary key auto_increment,
+	SRP_USER_FULLNAME varchar(32) not null comment '全称',
 	SRP_USER_NAME varchar(32) not null comment '用户名',
 	SRP_USER_PASS char(32) not null comment '密码',
 	SRP_USER_HASH_ID char(32) not null comment '用户hash id'

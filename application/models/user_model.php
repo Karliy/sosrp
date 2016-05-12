@@ -28,6 +28,7 @@ class User_model extends CI_Model{
 
 		// 插入用户主表
 		$data_user = array(
+			'SRP_USER_FULLNAME' => $full_name,
 			'SRP_USER_NAME' => $user_name,
 			'SRP_USER_PASS' => md5($password),
 			'SRP_USER_HASH_ID' => $hash_id
