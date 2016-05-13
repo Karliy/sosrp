@@ -66,16 +66,16 @@
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								<input type="text" class="form-control">
+								<input type="text" id="username" class="form-control">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-								<input type="password" class="form-control">
+								<input type="password" id="password" class="form-control">
 							</div>
 						</div>
-						<button class="btn btn-success btn-lg btn-block" type="submit">登录</button>
+						<a class="btn btn-success btn-lg btn-block" onclick="login();">登录</a>
 					</form>
 				</div>
 			</div>
@@ -110,6 +110,34 @@
     <!--Nifty Admin [ RECOMMENDED ]-->
     <script src="<?=base_url().'js/nifty.min.js'?>"></script>
 
+    <script type="text/javascript">
+    	function login()
+    	{
+    		var username = $('#username').val();
+    		var password = $('#password').val();
+
+			$.ajax({
+				type:'POST',
+				url: '<?=site_url().'/inc/check/login_in'?>',
+				data: {'username':username,'password':password},
+				dataType: 'json',
+				timeout: 15000,
+				success: function(msg){
+					if (msg['status']==1){
+				       location.href='<?=site_url().'/main'?>';
+					}else{
+			       		$.niftyNoty({
+				            type:'danger',
+				            container : 'body',
+				            html : '登录失败',
+				            focus: false,
+				            timer:1500
+				        });
+					}
+				}
+			});
+    	}
+    </script>
 
     <!--Background Image [ DEMONSTRATION ]-->
     <!-- // <script src="js/demo/bg-images.js"></script> -->

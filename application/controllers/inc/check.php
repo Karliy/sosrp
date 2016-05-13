@@ -19,7 +19,7 @@ class Check extends CI_Controller
 		$password=$this->input->post('password');
 		$obj=$this->user_model->login($username,$password);
 		if ($obj['status']==1){
-			$this->session->set_userdata('username',$username);
+			$this->session->set_userdata('username',$obj['data']);
 		}
 		echo json_encode($obj);
 	}
@@ -33,7 +33,7 @@ class Check extends CI_Controller
 		$full_name = $this->input->post('fullname');
 		$user_name = $this->input->post('username');
 		$email = $this->input->post('email');
-		$password = $this->input->post('passowrd');
+		$password = $this->input->post('password');
 
 		echo json_encode($this->user_model->register_user($full_name,$user_name,$email,$password));
 	}

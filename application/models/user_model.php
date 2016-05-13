@@ -68,7 +68,8 @@ class User_model extends CI_Model{
 	function login($username,$password)
 	{
 		$this->db->where('SRP_USER_NAME',$username);
-		$this->db->where('SRP_USER_PASS',$password);
+		$this->db->where('SRP_USER_PASS',md5($password));
+		$this->db->select('SRP_USER_HASH_ID,SRP_USER_FULLNAME');
 		$user_obj = $this->db->get('sosrp_users');
 
 		// 用户不存在
@@ -87,7 +88,7 @@ class User_model extends CI_Model{
 
 		// 判断状态是否开启
 		if ($userinfo_obj->row()->SRP_USER_STATUS == 1){
-			return array('status' => 1);
+			return array('status' => 1, 'data' => $user_obj->row()->SRP_USER_FULLNAME);
 		}else{
 			return array('status' => -2);
 		}

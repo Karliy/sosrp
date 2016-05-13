@@ -8,41 +8,41 @@
     <title>SOSRP 安全平台</title>
 
     <!--Bootstrap Stylesheet [ REQUIRED ]-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url().'css/bootstrap.min.css'?>" rel="stylesheet">
 
 
     <!--Nifty Stylesheet [ REQUIRED ]-->
-    <link href="css/nifty.min.css" rel="stylesheet">
+    <link href="<?=base_url().'css/nifty.min.css'?>" rel="stylesheet">
 
     <!--Nifty Premium Icon [ DEMO ]-->
-    <link href="css/demo/nifty-demo-icons.min.css" rel="stylesheet">
+    <link href="<?=base_url().'css/demo/nifty-demo-icons.min.css'?>" rel="stylesheet">
 
     
     <!--Font Awesome [ OPTIONAL ]-->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?=base_url().'plugins/font-awesome/css/font-awesome.min.css'?>" rel="stylesheet">
 
 
     <!--Animate.css [ OPTIONAL ]-->
-    <link href="plugins/animate-css/animate.min.css" rel="stylesheet">
+    <link href="<?=base_url().'plugins/animate-css/animate.min.css'?>" rel="stylesheet">
 
 
     <!--Morris.js [ OPTIONAL ]-->
-    <link href="plugins/morris-js/morris.min.css" rel="stylesheet">
+    <link href="<?=base_url().'plugins/morris-js/morris.min.css'?>" rel="stylesheet">
 
 
     <!--Switchery [ OPTIONAL ]-->
-    <link href="plugins/switchery/switchery.min.css" rel="stylesheet">
+    <link href="<?=base_url().'plugins/switchery/switchery.min.css'?>" rel="stylesheet">
 
 
     <!--Bootstrap Select [ OPTIONAL ]-->
-    <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="<?=base_url().'plugins/bootstrap-select/bootstrap-select.min.css'?>" rel="stylesheet">
 
 
     <!--Demo script [ DEMONSTRATION ]-->
-    <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
+    <link href="<?=base_url().'css/demo/nifty-demo.min.css'?>" rel="stylesheet">
 
-    <link href="plugins/pace/pace.min.css" rel="stylesheet">
-    <script src="plugins/pace/pace.min.js"></script>
+    <link href="<?=base_url().'plugins/pace/pace.min.css'?>" rel="stylesheet">
+    <script src="<?=base_url().'plugins/pace/pace.min.js'?>"></script>
 </head>
 
 <!--TIPS-->
@@ -78,72 +78,31 @@
                         <li id="dropdown-user" class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
                                 <span class="pull-right">
-                                    <img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
+                                    <img class="img-circle img-user media-object" src="<?=base_url().'img/av1.png'?>" alt="Profile Picture">
                                 </span>
-                                <div class="username hidden-xs">John Doe</div>
+                                <div class="username hidden-xs"><?=$username?></div>
                             </a>
 
 
                             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
 
-                                <!-- Dropdown heading  -->
-                                <div class="pad-all bord-btm">
-                                    <p class="text-lg text-semibold mar-btm">750Gb of 1,000Gb Used</p>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar" style="width: 70%;">
-                                            <span class="sr-only">70%</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-
                                 <!-- User dropdown menu -->
                                 <ul class="head-list">
                                     <li>
                                         <a href="#">
-                                            <i class="pli-male icon-lg icon-fw"></i> Profile
+                                            <i class="pli-male icon-lg icon-fw"></i> 个人信息
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
-                                            <span class="badge badge-danger pull-right">9</span>
-                                            <i class="pli-mail icon-lg icon-fw"></i> Messages
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="label label-success pull-right">New</span>
-                                            <i class="pli-gear icon-lg icon-fw"></i> Settings
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="pli-information icon-lg icon-fw"></i> Help
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="pli-computer-secure icon-lg icon-fw"></i> Lock screen
+                                        <a href="<?=site_url().'/main/logout'?>">
+                                            <i class="pli-unlock icon-lg icon-fw"></i> 退出
                                         </a>
                                     </li>
                                 </ul>
-
-                                <!-- Dropdown footer -->
-                                <div class="pad-all text-right">
-                                    <a href="pages-login.html" class="btn btn-primary">
-                                        <i class="pli-unlock"></i> Logout
-                                    </a>
-                                </div>
                             </div>
                         </li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End user dropdown-->
-
                     </ul>
                 </div>
-                <!--================================-->
-                <!--End Navbar Dropdown-->
-
             </div>
         </header>
         <!--===================================================-->
@@ -299,7 +258,6 @@
                         <div class="nano">
                             <div class="nano-content">
                                 <ul id="mainnav-menu" class="list-group">
-                                    <li class="list-divider"></li>
                         
                                     <!--Category name-->
                                     <li class="list-header">核心功能</li>                        
@@ -473,42 +431,12 @@
             <!--END MAIN NAVIGATION-->
         </div>
 
-        
-
         <!-- FOOTER -->
         <!--===================================================-->
         <footer id="footer">
-
-            <!-- Visible when footer positions are fixed -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="show-fixed pull-right">
-                <ul class="footer-list list-inline">
-                    <li>
-                        <p class="text-sm">SEO Proggres</p>
-                        <div class="progress progress-sm progress-light-base">
-                            <div style="width: 80%" class="progress-bar progress-bar-danger"></div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <p class="text-sm">Online Tutorial</p>
-                        <div class="progress progress-sm progress-light-base">
-                            <div style="width: 80%" class="progress-bar progress-bar-primary"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <button class="btn btn-sm btn-dark btn-active-success">Checkout</button>
-                    </li>
-                </ul>
-            </div>
-
-
-
             <!-- Visible when footer positions are static -->
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <div class="hide-fixed pull-right pad-rgt">SOSRP v1.0</div>
-
-
 
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
@@ -538,46 +466,46 @@
     <!--=================================================-->
 
     <!--jQuery [ REQUIRED ]-->
-    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="<?=base_url().'js/jquery-2.2.1.min.js'?>"></script>
 
     <!-- Chart.bundle.js -->
-    <script src="js/Chart.bundle.js"></script>
+    <script src="<?=base_url().'js/Chart.bundle.js'?>"></script>
 
     <!--BootstrapJS [ RECOMMENDED ]-->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?=base_url().'js/bootstrap.min.js'?>"></script>
 
 
     <!--Fast Click [ OPTIONAL ]-->
-    <script src="plugins/fast-click/fastclick.min.js"></script>
+    <script src="<?=base_url().'plugins/fast-click/fastclick.min.js'?>"></script>
 
     
     <!--Nifty Admin [ RECOMMENDED ]-->
-    <script src="js/nifty.min.js"></script>
+    <script src="<?=base_url().'js/nifty.min.js'?>"></script>
 
 
     <!--Morris.js [ OPTIONAL ]-->
-    <script src="plugins/morris-js/morris.min.js"></script>
-	<script src="plugins/morris-js/raphael-js/raphael.min.js"></script>
+    <script src="<?=base_url().'plugins/morris-js/morris.min.js'?>"></script>
+	<script src="<?=base_url().'plugins/morris-js/raphael-js/raphael.min.js'?>"></script>
 
 
     <!--Sparkline [ OPTIONAL ]-->
-    <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="<?=base_url().'plugins/sparkline/jquery.sparkline.min.js'?>"></script>
 
 
     <!--Skycons [ OPTIONAL ]-->
-    <script src="plugins/skycons/skycons.min.js"></script>
+    <script src="<?=base_url().'plugins/skycons/skycons.min.js'?>"></script>
 
 
     <!--Switchery [ OPTIONAL ]-->
-    <script src="plugins/switchery/switchery.min.js"></script>
+    <script src="<?=base_url().'plugins/switchery/switchery.min.js'?>"></script>
 
 
     <!--Bootstrap Select [ OPTIONAL ]-->
-    <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="<?=base_url().'plugins/bootstrap-select/bootstrap-select.min.js'?>"></script>
 
 
     <!--Demo script [ DEMONSTRATION ]-->
-    <script src="js/demo/nifty-demo.min.js"></script>
+    <script src="<?=base_url().'js/demo/nifty-demo.min.js'?>"></script>
 
     <script type="text/javascript">
         var randomScalingFactor = function() {
