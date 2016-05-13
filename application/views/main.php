@@ -262,7 +262,7 @@
                                     <!--Category name-->
                                     <li class="list-header">核心功能</li>                        
                                     <!--Menu list item-->
-                                    <li class="active-link">
+                                    <li class="sider-item active-link">
                                         <a href="index.html">
                                             <i class="psi-home"></i>
                                             <span class="menu-title">
@@ -282,10 +282,10 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="forms-general.html">可用性监控</a></li>
-                                            <li><a href="forms-components.html">攻击行为监控</a></li>
-                                            <li><a href="forms-validation.html">安全扫描</a></li>
-                                            <li><a href="forms-wizard.html">基线检查</a></li>
+                                            <li class="sider-item"><a href="#">可用性监控</a></li>
+                                            <li class="sider-item"><a href="#">攻击行为监控</a></li>
+                                            <li class="sider-item"><a href="forms-validation.html">安全扫描</a></li>
+                                            <li class="sider-item"><a href="forms-wizard.html">基线检查</a></li>
                                         </ul>
                                     </li>
                                     <!--Menu list item-->
@@ -300,8 +300,8 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="layouts-collapsed-navigation.html">攻击规则管理</a></li>
-                                            <li><a href="layouts-offcanvas-navigation.html">封禁IP管理</a></li>                                             
+                                            <li class="sider-item"><a href="layouts-collapsed-navigation.html">攻击规则管理</a></li>
+                                            <li class="sider-item"><a href="layouts-offcanvas-navigation.html">封禁IP管理</a></li>                                             
                                         </ul>
                                     </li>
 
@@ -315,8 +315,8 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="tables-static.html">插件生成</a></li>
-                                            <li><a href="tables-bootstrap.html">插件管理</a></li>
+                                            <li class="sider-item"><a href="tables-static.html">插件生成</a></li>
+                                            <li class="sider-item"><a href="tables-bootstrap.html">插件管理</a></li>
                                         </ul>
                                     </li>
                         
@@ -330,9 +330,8 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="misc-calendar.html">插件管理</a></li>
-                                            <li><a href="misc-maps.html">服务报表管理</a></li>
-                                            
+                                            <li class="sider-item"><a href="misc-calendar.html">插件管理</a></li>
+                                            <li class="sider-item"><a href="misc-maps.html">服务报表管理</a></li>
                                         </ul>
                                     </li>
                         
@@ -346,8 +345,8 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="mailbox.html">插件管理</a></li>
-                                            <li><a href="mailbox-message.html">标准配置项</a></li>
+                                            <li class="sider-item"><a href="mailbox.html">插件管理</a></li>
+                                            <li class="sider-item"><a href="mailbox-message.html">标准配置项</a></li>
                                         </ul>
                                     </li>
                         
@@ -361,9 +360,9 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="pages-blank.html">外部漏洞</a></li>
-                                            <li><a href="pages-profile.html">内部漏洞</a></li>
-                                            <li><a href="pages-faq.html">规则设置</a></li>                                          
+                                            <li class="sider-item"><a href="pages-blank.html">外部漏洞</a></li>
+                                            <li class="sider-item"><a href="pages-profile.html">内部漏洞</a></li>
+                                            <li class="sider-item"><a href="pages-faq.html">规则设置</a></li>                                          
                                         </ul>
                                     </li>
 
@@ -377,8 +376,8 @@
 
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="#">Web漏洞</a></li>
-                                            <li><a href="#">系统漏洞</a></li>
+                                            <li class="sider-item"><a href="#">Web漏洞</a></li>
+                                            <li class="sider-item"><a href="#">系统漏洞</a></li>
                                         </ul>
                                     </li>
 
@@ -398,9 +397,9 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="icons-ionicons.html">用户列表</a></li>
-                                            <li><a href="icons-themify.html">用户组管理</a></li> 
-                                            <li><a href="icons-themify.html">权限管理</a></li>                                      
+                                            <li class="sider-item"><a href="icons-ionicons.html">用户列表</a></li>
+                                            <li class="sider-item"><a href="icons-themify.html">用户组管理</a></li> 
+                                            <li class="sider-item"><a href="icons-themify.html">权限管理</a></li>                                      
                                         </ul>
                                     </li>
                                     <!--Menu list item-->
@@ -413,8 +412,8 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li><a href="icons-ionicons.html">资产列表</a></li>
-                                            <li><a href="icons-themify.html">资产组列表</a></li>
+                                            <li class="sider-item"><a href="icons-ionicons.html">资产列表</a></li>
+                                            <li class="sider-item"><a href="icons-themify.html">资产组列表</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -506,6 +505,20 @@
 
     <!--Demo script [ DEMONSTRATION ]-->
     <script src="<?=base_url().'js/demo/nifty-demo.min.js'?>"></script>
+
+    <script type="text/javascript">
+        var $sider=$('ul.list-group');
+
+        $sider.on('click','.sider-item', function(e){
+                $sider.find('.sider-item').removeClass('active-link');
+                $(this).addClass('active-link');
+        });
+
+        function _onloadUrl(url)
+        {
+            $('.main-content').load('<?=site_url().'/main/'?>'+url);
+        }
+    </script>
 
     <script type="text/javascript">
         var randomScalingFactor = function() {
