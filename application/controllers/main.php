@@ -40,4 +40,13 @@ class Main extends CI_Controller
 		$this->load->view('body');
 	}
 
+	/**
+	 * 展现安全扫描页
+	 * @return [type] [description]
+	 */
+	function scan()
+	{
+		$this->load->view('scan');
+	}
+
 }
