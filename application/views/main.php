@@ -39,6 +39,9 @@
     <link href="<?=base_url().'plugins/datatables/media/css/dataTables.bootstrap.css'?>" rel="stylesheet">
     <link href="<?=base_url().'plugins/datatables/extensions/Responsive/css/dataTables.responsive.css'?>" rel="stylesheet">
 
+    <!--Bootstrap Tags Input [ OPTIONAL ]-->
+    <link href="<?=base_url().'plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.css'?>" rel="stylesheet">
+
     <!--Demo script [ DEMONSTRATION ]-->
     <link href="<?=base_url().'css/demo/nifty-demo.min.css'?>" rel="stylesheet">
 
@@ -333,7 +336,10 @@
     </div>
     <!--===================================================-->
     <!-- END OF CONTAINER -->
-    
+    <!-- 自己构建的相应的html -->
+    <?php include "my.view.php" ?>
+    <!-- 自己构建的相应的html -->
+
     <!--JAVASCRIPT-->
     <!--=================================================-->
 
@@ -375,10 +381,16 @@
     <!--Bootstrap Select [ OPTIONAL ]-->
     <script src="<?=base_url().'plugins/bootstrap-select/bootstrap-select.min.js'?>"></script>
 
+    <!--Bootstrap Tags Input [ OPTIONAL ]-->
+    <script src="<?=base_url().'plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js'?>"></script>
 
     <!--Demo script [ DEMONSTRATION ]-->
     <script src="<?=base_url().'js/demo/nifty-demo.min.js'?>"></script>
     <script src="<?=base_url().'js/echarts3.js'?>"></script>
+
+    <!-- my.bootstrap.jquery -->
+    <script src="<?=base_url().'js/smarttang.bootstrap.js'?>"></script>
+    <!-- my.bootstrap.jquery -->
 
     <script type="text/javascript">
         // 页面加载的时候载入

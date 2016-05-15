@@ -25,6 +25,9 @@
 			<div class="panel-heading">
 				<h3 class="panel-title"><i class="fa fa-bar-chart"></i>&nbsp; 任务列表</h3>
 			</div>
+			<div id="demo-custom-toolbar2" class="table-toolbar-left" style="margin-left: 20px;margin-top: 25px;">
+				<button id="add-scan-task" class="btn btn-primary btn-labeled fa fa-plus">添加任务</button>
+			</div>
 			<div class="panel-body">
 				<table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
 					<thead>
@@ -57,11 +60,19 @@
 <script src="<?=base_url().'plugins/datatables/media/js/dataTables.bootstrap.js'?>"></script>
 <script src="<?=base_url().'plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js'?>"></script>
 
+<?php include 'scan/scan.view.php'; ?>
 
 <!--DataTables Sample [ SAMPLE ]-->
 <script src="<?=base_url().'js/demo/tables-datatables.js'?>"></script>
 
 <script type="text/javascript">
+	// 添加扫描任务
+	$('#add-scan-task').on('click',function(){
+		var _html = $('#scan-view').html();
+		smarttang.modal('添加扫描任务',_html,'关闭');
+
+	});
+
 	$('#demo-dt-basic').dataTable( {
 		"responsive": true,
 		"language": {
@@ -69,8 +80,10 @@
 			  "previous": '<i class="fa fa-angle-left"></i>',
 			  "next": '<i class="fa fa-angle-right"></i>'
 			}
-		}
+		},
+		"dom": '<"newtoolbar">frtip'
 	} );
+
 	hit_option = {
 	    title: {
 	        text: '扫描命中表',
