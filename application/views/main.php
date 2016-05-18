@@ -288,8 +288,8 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li class="sider-item"><a href="icons-ionicons.html">资产列表</a></li>
-                                            <li class="sider-item"><a href="icons-themify.html">资产组列表</a></li>
+                                            <li class="sider-item"><a href="#" onclick="_onloadUrl('asset');">资产列表</a></li>
+                                            <li class="sider-item"><a>资产组列表</a></li>
                                         </ul>
                                     </li>
                                 </ul>

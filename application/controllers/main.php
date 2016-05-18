@@ -49,4 +49,13 @@ class Main extends CI_Controller
 		$this->load->view('scan');
 	}
 
+	/**
+	 * 资产数据页面
+	 * @return [type] [description]
+	 */
+	function asset()
+	{
+		$this->load->view('asset/assets.view.php');
+	}
+
 }
