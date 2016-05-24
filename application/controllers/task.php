@@ -36,12 +36,11 @@ class Task extends CI_Controller
 		if ($object == 'add'){
 			$name=$this->input->post('scan_name');
 			$type=$this->input->post('scan_type');
-			$modules=$this->input->post('scan_modules');
 			$useranget=$this->input->post('scan_useranget');
+			$target = $this->input->post('scan_target');
 			$cookies=$this->input->post('scan_cookies');
-			$special=$this->input->post('scan_special');
 
-			echo json_encode($this->task_model->scan_add($name,$type,$modules,$useranget,$cookies,$special));
+			echo json_encode($this->task_model->scan_add($name,$type,$useranget,$cookies,$target));
 		}else{
 			if (!isset($id)){
 				echo json_encode(array('status' => 0,'msg' => '恶意操作,非法提交。'));
@@ -65,7 +64,7 @@ class Task extends CI_Controller
 					// 扫描任务开始
 					echo json_encode($this->task_model->scan_start($id));
 				}else{
-					echo json_encode(array('status' => 0,'msg' => '恶意操作,非法提交。'));
+					echo json_encode(array('status' => -1,'msg' => '恶意操作,非法提交。'));
 				}
 			}
 		}

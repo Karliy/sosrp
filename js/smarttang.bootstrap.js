@@ -10,7 +10,51 @@ var smarttang;
 var huineng;
 
 (function() {
-    smarttang = {   
+    smarttang = {
+        /**
+         * 私有的ajax(post)
+         * @param {[type]} postUrl  [请求链接]
+         * @param {[type]} ajaxData [ajax数据]
+         * @param {[type]} objFunc  [ajax请求成功后执行的function]
+         */
+        SmartAjax: function(postUrl,ajaxData,objFunc)
+        {
+            $.ajax({
+                type: 'POST',
+                url: postUrl,
+                async: false,  // 同步设置
+                data: ajaxData,
+                dataType: 'json',
+                error: function(msg){
+                    console.log('error:'+msg);
+                },
+                success:function(msg){
+                    if (msg.status > 0){
+                        objFunc(msg);
+                    }else{
+                        console.log('操作失败，错误码:'+msg.status);
+                    }
+                }
+            }); 
+        },
+        /**
+         * 下拉推荐
+         * @param {[type]} tag         [tag节点]
+         * @param {[type]} URL_PATH    [ajax地址]
+         * @param {[type]} idfied      [id标签]
+         * @param {[type]} keyfied     [key标签]
+         * @param {[type]} selectd_tag [选中后的tag变化点]
+         */
+        Bssuggest: function(tag,URL_PATH,idfied,keyfied,selectd_tag)
+        {
+            $(tag).bsSuggest('init', {
+                url: URL_PATH,
+                idField: idfied,
+                keyField: keyfied
+            }).on('onSetSelectValue', function (e, keyword) {
+                $(selectd_tag).val(keyword.id);
+            });
+        },
         /**
          * modal视窗
          * @param  {[type]} _title  [标题]
@@ -39,6 +83,25 @@ var huineng;
          */
         tables_init: function(_tag,_ajax,_columns,_column_button)
         {
+            var columnDefsValue;
+            var columnButton = [{
+                targets: _columns.length,
+                width: '5%',
+                render: function(data, type, row, meta) {
+                    var _html = " \
+                        <i class='blue icon-zoom-in bigger-130' class='tooltip-show' data-toggle='tooltip' title='查看' onclick='read("+row.id+");'></i> &nbsp; \
+                        <i class='green icon-wrench bigger-130' class='tooltip-show' data-toggle='tooltip' title='修改' onclick='change("+row.id+");'></i> &nbsp; \
+                        <i class='red icon-trash bigger-130' class='tooltip-show' data-toggle='tooltip' title='删除' onclick='del("+row.id+");'></i> &nbsp; \
+                    ";
+                    return _html;
+                } 
+            }];
+
+            if (_column_button ==''){
+                columnDefsValue = columnButton;
+            }else{
+                columnDefsValue = _column_button;
+            }
             var tables_func = $(_tag).DataTable({
                 "deferRender":true,
                 "bDestroy": true,
@@ -48,19 +111,8 @@ var huineng;
                     // 默认加载一些提示的功能，在按钮上
                     $("[data-toggle='tooltip']").tooltip(); 
                 },
-                columns:_columns,
-                columnDefs: [{
-                    targets: _columns.length - 1,
-                    width: '5%',
-                    render: function(data, type, row, meta) {
-                        var _html = " \
-                            <i class='blue icon-zoom-in bigger-130' class='tooltip-show' data-toggle='tooltip' title='查看' onclick='#'></i> &nbsp; \
-                            <i class='green icon-wrench bigger-130' class='tooltip-show' data-toggle='tooltip' title='修改' onclick='#'></i> &nbsp; \
-                            <i class='red icon-trash bigger-130' class='tooltip-show' data-toggle='tooltip' title='删除' onclick='#'></i> &nbsp; \
-                        ";
-                        return _html;
-                    } 
-                }]
+                columns: _columns,
+                columnDefs: columnDefsValue
             });
             return tables_func;
         },
@@ -110,36 +162,29 @@ var huineng;
                 'redo'
             ];
             editor.create();
-        },
+        },    
         /**
-         * 删除一个列表里面的值
-         * @param  {[type]} id       [准备删除的id]
-         * @param  {[type]} title    [栏目的名称]
-         * @param  {[type]} post_url [请求的地址]
-         * @return {[type]}          [description]
+         * 按钮特效（loading效果）
+         * --- 
+         * bootstrap v3 已经去除该效果，老版本才有
+         * 这里添加回来
+         * @param  {[type]} buttonTag    [按钮的TAG]
+         * @param  {[type]} staTus       [状态选择（open/close）]
+         * @param  {[type]} defaultTitle [初始状态的文字]
+         * @param  {[type]} LoadingTitle [运行状态的文字]
+         * @return {[type]}              [description]
          */
-        delete: function(id,title,post_url)
+        button_status: function(buttonTag,staTus,defaultTitle,LoadingTitle)
         {
-            var bool = false;
-            var info_id = id;
-            if(confirm('您确定要删除该'+title+'么？')){
-                $.ajax({
-                    type: 'POST',
-                    url: post_url,
-                    async: false,  // 同步设置
-                    data: {'obj':'delete','id':info_id},
-                    dataType: 'json',
-                    error: function(msg){
-                        console.log('error:'+msg);
-                    },
-                    success:function(msg){
-                        if (msg['status'] == 1){
-                            bool = true;
-                        }
-                    }
-                }); 
-                return bool;
+            if (staTus == 'open'){
+                buttonTag.addClass('disabled');
+                buttonTag.html(LoadingTitle);
+            }else if(staTus == 'close'){
+                buttonTag.removeClass('disabled');
+                // 还原成最初的html text
+                buttonTag.html(defaultTitle);
             }
+
         }
     };
     huineng = {
@@ -195,11 +240,21 @@ var huineng;
                 that = this,
                 queryStr = $form.serialize();
 
-            formData = Util.queryStr2Object(queryStr, true);
+            formData = huineng.queryStr2Object(queryStr, true);
 
             return formData;
+        },
+        /**
+         * 合并对象
+         * @param  {[type]} o1 [准备合并的对象1]
+         * @param  {[type]} o2 [准备合并的对象2]
+         * @return {[type]}    [description]
+         */
+        mergeData: function(o1,o2){
+           for(var key in o2){
+               o1[key]=o2[key]
+           }
+           return o1;
         }
     };
 }) (jQuery);
-
- 
