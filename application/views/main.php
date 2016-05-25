@@ -273,7 +273,7 @@
                         
                                         <!--Submenu-->
                                         <ul class="collapse">
-                                            <li class="sider-item"><a href="icons-ionicons.html">用户列表</a></li>
+                                            <li class="sider-item"><a href="#" onclick="_onloadUrl('user');">用户列表</a></li>
                                             <li class="sider-item"><a href="icons-themify.html">用户组管理</a></li> 
                                             <li class="sider-item"><a href="icons-themify.html">权限管理</a></li>                                      
                                         </ul>

@@ -58,4 +58,13 @@ class Main extends CI_Controller
 		$this->load->view('asset/assets.view.php');
 	}
 
+	/**
+	 * 用户页面
+	 * @return [type] [description]
+	 */
+	function user()
+	{
+		$this->load->view('user/users.view.php');
+	}
+
 }
