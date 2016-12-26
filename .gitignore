@@ -1,0 +1,9 @@
+/assets/upload/
+.DS_Store
+/application/cache/
+/application/logs/
+#/application/config/database.php
+Gruntfile.js
+/node_modules/
+package.json
+sftp-config.json
