@@ -7,46 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOSRP 安全平台</title>
 
-    <!--Bootstrap Stylesheet [ REQUIRED ]-->
-    <link href="<?=base_url().'css/bootstrap.min.css'?>" rel="stylesheet">
-
-
-    <!--Nifty Stylesheet [ REQUIRED ]-->
-    <link href="<?=base_url().'css/nifty.min.css'?>" rel="stylesheet">
-
-    <!--Nifty Premium Icon [ DEMO ]-->
-    <link href="<?=base_url().'css/demo/nifty-demo-icons.min.css'?>" rel="stylesheet">
-
+    <?php include 'js_css/header.php' ?>
     
-    <!--Font Awesome [ OPTIONAL ]-->
-    <link href="<?=base_url().'plugins/font-awesome/css/font-awesome.min.css'?>" rel="stylesheet">
-
-
-    <!--Animate.css [ OPTIONAL ]-->
-    <link href="<?=base_url().'plugins/animate-css/animate.min.css'?>" rel="stylesheet">
-
-
-    <!--Morris.js [ OPTIONAL ]-->
-    <link href="<?=base_url().'plugins/morris-js/morris.min.css'?>" rel="stylesheet">
-
-
-    <!--Switchery [ OPTIONAL ]-->
-    <link href="<?=base_url().'plugins/switchery/switchery.min.css'?>" rel="stylesheet">
-
-    <!--Bootstrap Select [ OPTIONAL ]-->
-    <link href="<?=base_url().'plugins/bootstrap-select/bootstrap-select.min.css'?>" rel="stylesheet">
-    <!--Bootstrap Table [ OPTIONAL ]-->
-    <link href="<?=base_url().'plugins/datatables/media/css/dataTables.bootstrap.css'?>" rel="stylesheet">
-    <link href="<?=base_url().'plugins/datatables/extensions/Responsive/css/dataTables.responsive.css'?>" rel="stylesheet">
-
-    <!--Bootstrap Tags Input [ OPTIONAL ]-->
-    <link href="<?=base_url().'plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.css'?>" rel="stylesheet">
-
-    <!--Demo script [ DEMONSTRATION ]-->
-    <link href="<?=base_url().'css/demo/nifty-demo.min.css'?>" rel="stylesheet">
-
-    <link href="<?=base_url().'plugins/pace/pace.min.css'?>" rel="stylesheet">
-    <script src="<?=base_url().'plugins/pace/pace.min.js'?>"></script>
 </head>
 
 <!--TIPS-->
@@ -343,40 +305,27 @@
     <!--JAVASCRIPT-->
     <!--=================================================-->
 
+
     <!--jQuery [ REQUIRED ]-->
     <script src="<?=base_url().'js/jquery-2.2.1.min.js'?>"></script>
-
     <!-- Chart.bundle.js -->
     <script src="<?=base_url().'js/Chart.bundle.js'?>"></script>
-
     <!--BootstrapJS [ RECOMMENDED ]-->
     <script src="<?=base_url().'js/bootstrap.min.js'?>"></script>
-
-
     <!--Fast Click [ OPTIONAL ]-->
     <script src="<?=base_url().'plugins/fast-click/fastclick.min.js'?>"></script>
-
-    
     <!--Nifty Admin [ RECOMMENDED ]-->
     <script src="<?=base_url().'js/nifty.min.js'?>"></script>
-
-
     <!--Morris.js [ OPTIONAL ]-->
     <script src="<?=base_url().'plugins/morris-js/morris.min.js'?>"></script>
 	<script src="<?=base_url().'plugins/morris-js/raphael-js/raphael.min.js'?>"></script>
-
-
     <!--Sparkline [ OPTIONAL ]-->
     <script src="<?=base_url().'plugins/sparkline/jquery.sparkline.min.js'?>"></script>
-
-
     <!--Skycons [ OPTIONAL ]-->
     <script src="<?=base_url().'plugins/skycons/skycons.min.js'?>"></script>
-
-
     <!--Switchery [ OPTIONAL ]-->
     <script src="<?=base_url().'plugins/switchery/switchery.min.js'?>"></script>
-
+    <script src="<?=base_url().'plugins/pace/pace.min.js'?>"></script>
 
     <!--Bootstrap Select [ OPTIONAL ]-->
     <script src="<?=base_url().'plugins/bootstrap-select/bootstrap-select.min.js'?>"></script>
