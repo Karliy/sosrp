@@ -46,7 +46,7 @@
 							<td><span class="priflag label label-success">网站扫描</span></td>
 							<td>2016-04-11 01:44:54</td>
 							<td>2016-04-11 01:44:54</td>
-							<td><div class="progress progress-striped active" data-percent="100%"><div class="progress-bar" style="width: 100%;"></div></div></td>
+							<td><span class="badge badge-success">扫描中</span></td>
 							<td>___</td>
 						</tr>
 					</tbody>

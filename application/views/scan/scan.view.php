@@ -11,8 +11,8 @@
 				<label for="demo-msk-date2" class="col-md-4 control-label"> *扫描类型 </label>
 				<div class="col-md-7">
 					<div class="pad-ver">
-						<label class="form-radio form-normal form-text active"><input type="radio" id="sys" name="def-w-label1" checked=""> 系统扫描</label>
-						<label class="form-radio form-normal form-text"><input type="radio" id="web" name="def-w-label"> 网站扫描</label>
+						<label class="form-radio form-normal form-text active"><input type="radio" id="sys" name="sys" checked=""> 系统扫描</label>
+						<label class="form-radio form-normal form-text"><input type="radio" id="web" name="web"> 网站扫描</label>
 					</div>
 				</div>
 			</div>
