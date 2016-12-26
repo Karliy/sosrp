@@ -55,15 +55,10 @@
 		</div>
 	</div>
 </div>
-<!--DataTables [ OPTIONAL ]-->
-<script src="<?=base_url().'plugins/datatables/media/js/jquery.dataTables.js'?>"></script>
-<script src="<?=base_url().'plugins/datatables/media/js/dataTables.bootstrap.js'?>"></script>
-<script src="<?=base_url().'plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js'?>"></script>
+
+<?php include 'js_css/js.php'; ?>
 
 <?php include 'scan/scan.view.php'; ?>
-
-<!--DataTables Sample [ SAMPLE ]-->
-<script src="<?=base_url().'js/demo/tables-datatables.js'?>"></script>
 
 <script type="text/javascript">
 	// 添加扫描任务
