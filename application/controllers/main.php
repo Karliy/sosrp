@@ -21,7 +21,8 @@ class Main extends CI_Controller
 	{
 		$routes = array(
 			'default' => 'main/default.php',	// 大盘数据
-			'scanner' => 'main/scanner.php'		// 安全扫描
+			'scanner' => 'main/scanner.php',	// 安全扫描
+			'users' => 'main/users.php',	// 用户列表
 		);
 
 		if (empty($path_key) or !array_key_exists($path_key,$routes)){
