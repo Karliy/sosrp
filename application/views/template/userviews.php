@@ -8,15 +8,15 @@
               <div class="timeline-body">
                   <div class="box-body" style="margin-left:-50px;">
                     <div class="form-group">
-                      <label for="username" class="col-sm-3 control-label">登录账号</label>
+                      <label for="user_name" class="col-sm-3 control-label">登录账号</label>
                       <div class="col-sm-9">
-                        <input type="text" class="form-control" name="username" placeholder="字母、下划线、数字">
+                        <input type="text" class="form-control" name="user_name" placeholder="字母、下划线、数字">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label for="password" class="col-sm-3 control-label">登录密码</label>
+                      <label for="pass_word" class="col-sm-3 control-label">登录密码</label>
                       <div class="col-sm-9">
-                        <input type="password" class="form-control" name="password" placeholder="字母、特殊字符串、数字等">
+                        <input type="password" class="form-control" name="pass_word" placeholder="字母、特殊字符串、数字等">
                       </div>
                     </div>
                   </div>

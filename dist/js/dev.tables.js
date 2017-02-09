@@ -43,22 +43,24 @@ var table_obj;  // 用于刷新对象
                 });
             }
         },
-        // 业务上线推送commit工单
-        buglist: function()
+        // 用户列表
+        userlist: function()
         {
             this.adminTable({
-                ElementId: 'buglist',
+                ElementId: 'userlist',
                 remoteUrl: SYSTEM,
+                param: {'jump':'users','obj':'list'},
                 dataBases: [
                     {data: 'id'},
-                    {data: 'name'},
-                    {data: 'type'},
+                    {data: 'fullname'},
+                    {data: 'email'},
                     {data: 'createtime'},
-                    {data: 'status'}
+                    {data: 'lastlogin'},
+                    {data: 'ustatus'}
                 ],
                 obJect: [
                     {
-                        targets: 5,
+                        targets: 6,
                         render: function(data, type, row, meta){
                             var html ='<a data-toggle="tooltip" title="查看" class="fa fa-search" href="#" onclick="kyledong.wafruleRead_data(\''+data+'\');"></a> &nbsp; \
                                 <a data-toggle="tooltip" title="存在风险" class="fa fa-life-saver" href="#" onclick="commit_worker.ob(\''+data+'\',1);"></a> &nbsp; \
@@ -68,68 +70,12 @@ var table_obj;  // 用于刷新对象
                         }
                     }
                 ]
-            });
-        },
-        nodelist: function()
-        {
-            this.adminTable({
-                ElementId: 'nodelist',
-                remoteUrl: SCAN_OBJ,
-                param:{'obj':'node_list'},
-                dataBases: [
-                    {data: 'id'},
-                    {data: 'node_host'},
-                    {data: 'node_service'},
-                    {data: 'system'},
-                    {data: 'node_status'},
-                    {data: 'datetime'}
-                ],
-                obJect: [
-                    {
-                        targets: 6,
-                        render: function(data, type, row, meta){
-                            var html ='<a data-toggle="tooltip" title="切换状态" class="fa fa-exchange" href="#" onclick="kyledong.scanodeChange_data(\''+row['id']+'\');"></a> &nbsp; \
-                                <a data-toggle="tooltip" title="删除" class="fa fa-trash-o" href="#" onclick="kyledong.scanodeDelete_data(\''+row['id']+'\');"></a> &nbsp; \
-                            ';
-                            return html;
-                        }
-                    }
-                ]
-            });
-        },
-        waf_rule_list: function()
-        {
-            this.adminTable({
-                ElementId: 'waf_rule_list',
-                remoteUrl: WAF_RULE,
-                param:{'obj':'waf_rule_list'},
-                dataBases: [
-                    {data: 'id'},
-                    {data: 'name'},
-                    {data: 'type'},
-                    {data: 'status'}
-                ],
-                obJect: [
-                    {
-                        targets: 4,
-                        render: function(data, type, row, meta){
-                            var html ='<a data-toggle="tooltip" title="查看" class="fa fa-search" href="#" onclick="kyledong.wafruleRead_data(\''+row['id']+'\');"></a> &nbsp; \
-                                <a data-toggle="tooltip" title="修改" class="fa fa-edit" href="#" onclick="sevent.pull(\''+row['id']+'\');"></a> &nbsp; \
-                                <a data-toggle="tooltip" title="切换状态" class="fa fa-exchange" href="#" onclick="node_change(\''+row['id']+'\');"></a> &nbsp; \
-                                <a data-toggle="tooltip" title="删除" class="fa fa-trash-o" href="#" onclick="node_delete(\''+row['id']+'\');"></a> &nbsp; \
-                            ';
-                            return html;
-                        }
-                    }
-                ]
-            });
+            });   
         },
         // 初始化加载
         init: function()
         {
-            this.buglist();
-            this.nodelist();
-            this.waf_rule_list();
+            this.userlist();
         }
     }
 })(jQuery);

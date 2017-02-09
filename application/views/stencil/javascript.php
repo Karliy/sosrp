@@ -24,6 +24,7 @@
 <script src="<?=base_url().'dist/js/bootbox.min.js'?>"></script>
 <!-- 定制化js -->
 <script src="<?=base_url().'dist/js/dev.profession.js'?>"></script>
+<script src="<?=base_url().'dist/js/dev.base.js'?>"></script>
 
 
 <script type="text/javascript">

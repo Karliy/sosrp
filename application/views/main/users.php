@@ -8,7 +8,7 @@
     <div class="box box-primary">
       <div class="box-header with-border">
         <div class="box-title">
-          <a href="#" onclick="userlist();" class="btn btn-block btn-primary">添加用户</a>
+          <a href="#" onclick="base.userAdd_view();" class="btn btn-block btn-primary"><i class="fa fa-user-plus"></i> 添加用户</a>
         </div>
       </div>
       <div class="box-body">

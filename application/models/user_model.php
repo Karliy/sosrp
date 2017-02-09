@@ -93,6 +93,22 @@ class User_model extends CI_Model{
 			return array('status' => -2);
 		}
 	}
+
+	/**
+	 * 用户列表
+	 * @return [type] [description]
+	 */
+	function user_list()
+	{
+		$this->db->select('SRP_USER_ID id,SRP_USER_FULLNAME fullname,sosrp_user_info.SRP_USER_EMAIL email,SRP_USER_CREATETIME createtime,SRP_USER_LASTLOGIN lastlogin,sosrp_user_info.SRP_USER_STATUS ustatus');
+		$this->db->join('sosrp_user_info','sosrp_user_info.SRP_USER_HASH_ID = sosrp_users.SRP_USER_HASH_ID');
+		$user_data = $this->db->get('sosrp_users');
+
+		if ($user_data->num_rows() < 1){
+			return array('status' => -1);
+		}
+		return array('status' => 1,'data' => $user_data->result_array());
+	}
 }
 
 ?>
