@@ -71,18 +71,11 @@
                 </div>
             </div>
         </header>
-        <!--===================================================-->
-        <!--END NAVBAR-->
-
         <div class="boxed">
 
-            <!--CONTENT CONTAINER-->
-            <!--===================================================-->
             <div id="content-container">
-
+                <? include $url ?>
             </div>
-            <!--===================================================-->
-            <!--END CONTENT CONTAINER-->
 
 
             
@@ -102,7 +95,7 @@
                                     <li class="list-header">核心功能</li>                        
                                     <!--Menu list item-->
                                     <li class="sider-item active-link">
-                                        <a href="#" onclick="_onloadUrl('body');">
+                                        <a href="#" onclick="<?=site_url().'/main'?>">
                                             <i class="psi-home"></i>
                                             <span class="menu-title">
                                                 <strong>大盘数据</strong>
@@ -122,7 +115,7 @@
                                         <ul class="collapse">
                                             <li class="sider-item"><a href="#">可用性监控</a></li>
                                             <li class="sider-item"><a href="#">攻击行为监控</a></li>
-                                            <li class="sider-item"><a href="#" onclick="_onloadUrl('scan');">安全扫描</a></li>
+                                            <li class="sider-item"><a href="<?=site_url().'/main?path=scanner'?>">安全扫描</a></li>
                                             <li class="sider-item"><a href="forms-wizard.html">基线检查</a></li>
                                         </ul>
                                     </li>
@@ -308,23 +301,6 @@
 
     <?php include 'js_css/js.php';?>
     <!-- my.bootstrap.jquery -->
-
-    <script type="text/javascript">
-        // 页面加载的时候载入
-        _onloadUrl('body');
-
-        var $sider=$('ul.list-group');
-
-        $sider.on('click','.sider-item', function(e){
-                $sider.find('.sider-item').removeClass('active-link');
-                $(this).addClass('active-link');
-        });
-
-        function _onloadUrl(url)
-        {
-            $('#content-container').load('<?=site_url().'/main/'?>'+url);
-        }
-    </script>
         
 
 </body>

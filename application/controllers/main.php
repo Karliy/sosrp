@@ -11,60 +11,48 @@ class Main extends CI_Controller
 			redirect('/login','location');
 		}
 	}
-	
-	/**
-	 * SOSRP安全平台主页面
-	 * @return [type] [description]
-	 */
-	function index(){
-		$data['username']=$this->session->userdata('username');
-		$this->load->view('main',$data);
-	} 
 
 	/**
-	 * 登出
+	 * 配置路由相关的信息
+	 * @param  [type] $path_key [description]
+	 * @return [type]           [description]
+	 */
+	private function returnUrl($path_key)
+	{
+		$routes = array(
+			'default' => 'main/default.php',	// 大盘数据
+			'scanner' => 'main/scanner.php'		// 安全扫描
+		);
+
+		if (empty($path_key) or !array_key_exists($path_key,$routes)){
+			return $routes['default'];
+		}else{
+			return $routes[$path_key];
+		}
+	}
+
+	/**
+	 * 处理功能选择逻辑
+	 * 不同的功能配置路由
+	 * @param  [type] $path [路由地址]
+	 * @return [type]       [description]
+	 */
+	public function index()
+	{
+		$session = $this->session->userdata('username');
+		$this->load->view('main',array(
+			'username' => $session,
+			'url' => $this->returnUrl($this->input->get('path'))
+		));
+	}
+
+	/**
+	 * 退出
 	 * @return [type] [description]
 	 */
-	function logout()
+	public function logout()
 	{
 		$this->session->unset_userdata('username');
 		redirect('/login','location');
 	}
-
-	/**
-	 * 展现SOSRP平台内页body统计
-	 * @return [type] [description]
-	 */
-	function body()
-	{
-		$this->load->view('body');
-	}
-
-	/**
-	 * 展现安全扫描页
-	 * @return [type] [description]
-	 */
-	function scan()
-	{
-		$this->load->view('scan');
-	}
-
-	/**
-	 * 资产数据页面
-	 * @return [type] [description]
-	 */
-	function asset()
-	{
-		$this->load->view('asset/assets.view.php');
-	}
-
-	/**
-	 * 用户页面
-	 * @return [type] [description]
-	 */
-	function user()
-	{
-		$this->load->view('user/users.view.php');
-	}
-
 }

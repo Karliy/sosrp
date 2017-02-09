@@ -38,3 +38,6 @@
 
 <!--DataTables Sample [ SAMPLE ]-->
 <script src="<?=base_url().'js/demo/tables-datatables.js'?>"></script>
+
+<!-- 启动的js -->
+<script src="<?=base_url().'js/dev/dev.init.js'?>"></script>

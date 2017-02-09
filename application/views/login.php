@@ -138,7 +138,6 @@
 			});
     	}
     </script>
-
     <!--Background Image [ DEMONSTRATION ]-->
     <!-- // <script src="js/demo/bg-images.js"></script> -->
 
