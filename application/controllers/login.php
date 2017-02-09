@@ -18,13 +18,4 @@ class Login extends CI_Controller {
 		$this->load->view('login');
 	}
 
-	/**
-	 * 注册用户页面
-	 * @return [type] [description]
-	 */
-	public function register()
-	{
-		$this->load->view('register');
-	}
-
 }

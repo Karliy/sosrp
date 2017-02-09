@@ -21,8 +21,7 @@ class Main extends CI_Controller
 	{
 		$routes = array(
 			'default' => 'main/default.php',	// 大盘数据
-			'scanner' => 'main/scanner.php',	// 安全扫描
-			'users' => 'main/users.php',	// 用户列表
+			'users' => 'main/users.php'	// 用户列表
 		);
 
 		if (empty($path_key) or !array_key_exists($path_key,$routes)){
@@ -41,7 +40,7 @@ class Main extends CI_Controller
 	public function index()
 	{
 		$session = $this->session->userdata('username');
-		$this->load->view('main',array(
+		$this->load->view('default',array(
 			'username' => $session,
 			'url' => $this->returnUrl($this->input->get('path'))
 		));
