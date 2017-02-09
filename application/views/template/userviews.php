@@ -61,5 +61,5 @@
   </form>
 </div>
 <div id="users_button" style="display: none;">
-  <a class="btn btn-info" type="button" onclick="kyledong.scanodeAdd_data('#nodeadd');">提交</a><button data-dismiss="modal" class="btn btn-default" type="button">关闭</button>
+  <a class="btn btn-info" type="button" onclick="base.userAdd_data();">提交</a><button data-dismiss="modal" class="btn btn-default" type="button">关闭</button>
 </div>
