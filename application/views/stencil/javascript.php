@@ -10,6 +10,8 @@
 <script src="<?=base_url().'plugins/fastclick/fastclick.js'?>"></script>
 <!-- AdminLTE App -->
 <script src="<?=base_url().'dist/js/app.min.js'?>"></script>
+<!-- toastr.js -->
+<script src="<?=base_url().'dist/js/toastr.js'?>"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url().'dist/js/default.js'?>"></script>
 <!-- tables -->

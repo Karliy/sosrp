@@ -20,4 +20,6 @@
   <link rel="stylesheet" href="<?=base_url().'dist/css/bootstrap-table.min.css'?>">
   <!-- select 2.0 -->
   <link rel="stylesheet" href="<?=base_url().'dist/css/bootstrap-select.min.css'?>">
+  <!-- toastr -->
+  <link rel="stylesheet" href="<?=base_url().'dist/css/toastr.min.css'?>">
 </head>

@@ -53,10 +53,11 @@ var base;
 				parames: $.extend(formData,{'jump':'users','obj':'add'}),
 				success:function(msg){
 					if (msg['status'] == 1){
-						alert('添加用户成功!');
+						$('.modal').modal('hide');
+						toastr.success('添加用户成功!');
 						table_obj.ajax.reload();
 					}else{
-						alert('添加用户失败!');
+						toastr.error('添加用户失败! 状态号: '+msg['status']);
 					}
 				}
 			});
@@ -74,10 +75,10 @@ var base;
 				parames: {'jump':'users','id':id,'obj':jobs},
 				success:function(msg){
 					if (msg['status'] == 1){
-						alert('用户操作成功!');
+						toastr.success('用户操作成功!');
 						table_obj.ajax.reload();
 					}else{
-						alert('用户操作失败!');
+						toastr.error('用户操作失败! 状态号: '+msg['status']);
 					}
 				}
 			});
