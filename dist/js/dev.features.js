@@ -17,6 +17,12 @@ var myajax,alerts,huineng,smarttang;
         // 获得modal里面的form表单信息
         getModal: function(formId) {
             return huineng.getFormData($('.modal-body ' + formId));
+        },
+
+        // 创建按钮
+        createButton: function(Btittle,Bicon,Bjquery)
+        {
+            return '<a data-toggle="tooltip" title="'+ Btittle +'" class="fa '+ Bicon +'" href="#" onclick="'+ Bjquery +';"></a> &nbsp;'
         }
     };
 

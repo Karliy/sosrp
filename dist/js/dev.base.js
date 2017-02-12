@@ -62,6 +62,27 @@ var base;
 			});
 
 	        return that;
+		},
+
+		// 用户操作行为(删除、状态切换)
+		userOperat_data: function(id,jobs)
+		{
+			var that = this;
+
+			myajax.post({
+				remoteurl: SYSTEM,
+				parames: {'jump':'users','id':id,'obj':jobs},
+				success:function(msg){
+					if (msg['status'] == 1){
+						alert('用户操作成功!');
+						table_obj.ajax.reload();
+					}else{
+						alert('用户操作失败!');
+					}
+				}
+			});
+
+	        return that;
 		}
 	};
 

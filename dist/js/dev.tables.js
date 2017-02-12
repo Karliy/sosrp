@@ -55,18 +55,37 @@ var table_obj;  // 用于刷新对象
                     {data: 'fullname'},
                     {data: 'email'},
                     {data: 'createtime'},
-                    {data: 'lastlogin'},
-                    {data: 'ustatus'}
+                    {
+                        data: 'lastlogin',
+                        render: function(data,type,row,meta){
+                            if (data == '0000-00-00 00:00:00'){
+                                return '未登录';
+                            }else{
+                                return data;
+                            }
+                        }
+                    },
+                    {
+                        data: 'ustatus',
+                        render: function(data,type,row,meta){
+                            var _$html = '<small class="label ';
+                            if (data == 1){
+                                _$html += 'bg-green">启用';
+                            }else{
+                                _$html += 'bg-red">禁用';
+                            }
+                            return _$html + '</small>';
+                        }
+                    }
                 ],
                 obJect: [
                     {
                         targets: 6,
                         render: function(data, type, row, meta){
-                            var html ='<a data-toggle="tooltip" title="查看" class="fa fa-search" href="#" onclick="kyledong.wafruleRead_data(\''+data+'\');"></a> &nbsp; \
-                                <a data-toggle="tooltip" title="存在风险" class="fa fa-life-saver" href="#" onclick="commit_worker.ob(\''+data+'\',1);"></a> &nbsp; \
-                                <a data-toggle="tooltip" title="安全通过" class="fa fa-hand-peace-o" href="#" onclick="commit_worker.ob(\''+data+'\',2);"></a> &nbsp; \
-                            ';
-                            return html;
+                            return [
+                                smarttang.createButton('切换状态','fa-exchange','base.userOperat_data('+row.id+',\'status\')'),
+                                smarttang.createButton('删除用户','fa-trash-o','base.userOperat_data('+ row.id +',\'delete\')')
+                            ].join("");
                         }
                     }
                 ]

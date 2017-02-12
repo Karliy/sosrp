@@ -57,6 +57,12 @@ class Sysjob extends CI_Controller
 			case 'status':
 				echo json_encode($this->user_model->user_status($id,$inputs->post('ustatus')));
 				break;
+			case 'delete':
+				echo json_encode($this->user_model->user_delete($id));
+				break;
+			case 'add':
+				echo json_encode($this->user_model->user_add($inputs));
+				break;
 			default:
 				echo json_encode(array('status' => 0));
 				break;
