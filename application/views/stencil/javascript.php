@@ -31,5 +31,4 @@
 
 <script type="text/javascript">
 	main.init();
-	tables.init();
 </script>

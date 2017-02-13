@@ -37,6 +37,8 @@ var main;
 					}
 				}
 			}
+			// 表格初始化
+			tables.init();
         },
         getElementChildren: function(ele, tagName)
         {

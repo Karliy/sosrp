@@ -1,12 +1,12 @@
 <?php
-class Sysjob extends CI_Controller
+class Scannerjob extends CI_Controller
 {
 	function __construct()
 	{
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('session');
-		$this->load->model('user_model');
+		$this->load->model('scanner_model');
 		$session=$this->session->userdata('username');
 		if(!$session){
 			redirect('/login','location');
@@ -23,16 +23,16 @@ class Sysjob extends CI_Controller
 		$jump = $this->input->post('jump');
 
 		switch ($jump) {
-			case 'users':
-				$this->users($this->input);
+			case 'web':
+				$this->web_scanner($this->input);
 				break;
 			
-			case 'bugs':
-				$this->bugs($this->input);
+			case 'port':
+				$this->port_scanner($this->input);
 				break;
 
-			case 'roles':
-				$this->roles($this->input);
+			case 'pass':
+				$this->password_scanner($this->input);
 				break;
 			
 			default:
@@ -42,11 +42,11 @@ class Sysjob extends CI_Controller
 	}
 
 	/**
-	 * 用户的处理方法
+	 * WEB漏洞扫描
 	 * @param  [type] $inputs [description]
 	 * @return [type]         [description]
 	 */
-	private function users($inputs)
+	private function web_scanner($inputs)
 	{
 		$obj = $inputs->post('obj');
 		$id = $inputs->post('id');
@@ -68,15 +68,5 @@ class Sysjob extends CI_Controller
 				echo json_encode(array('status' => 0));
 				break;
 		}
-	}
-
-	/**
-	 * bug处理方法
-	 * @param  [type] $inputs [description]
-	 * @return [type]         [description]
-	 */
-	private function bugs($inputs)
-	{
-		die;
 	}
 }
