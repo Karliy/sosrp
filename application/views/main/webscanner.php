@@ -9,14 +9,22 @@
     <div class="col-xs-12">
       <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#fa-icons" data-toggle="tab" aria-expanded="true">常规漏洞扫描</a></li>
-          <li class=""><a href="#glyphicons" data-toggle="tab" aria-expanded="false">自研漏洞扫描</a></li>
+          <li class="active"><a href="#conventionalScan" data-toggle="tab" aria-expanded="true">常规漏洞扫描</a></li>
+          <li class=""><a href="#ruleScan" data-toggle="tab" aria-expanded="false">规则漏洞扫描</a></li>
         </ul>
         <div class="tab-content">
-          <!-- Font Awesome Icons -->
-          <div class="tab-pane active" id="fa-icons">
+          <div class="tab-pane active" id="conventionalScan">
             <section class="content">
-                <!-- 图表，以后弄 -->
+                <div class="row">
+                  <div class="col-sm-6">
+                    <p>风险类型统计 <code>top10</code></p>
+                    <div id="conventionalScan_typecount" style="min-width:400px;min-height:300px"></div>
+                  </div>
+                  <div class="col-sm-6">
+                    <p>风险级别统计 <code>高、中、低分布</code></p>
+                    <div id="conventionalScan_levelcount" style="min-width:400px;min-height:300px"></div>
+                  </div>
+                </div>
             </section>
             <section class="content">
                 <div class="box-header with-border">
@@ -40,10 +48,8 @@
                 </table>
             </section>
           </div>
-          <!-- /#fa-icons -->
 
-          <!-- glyphicons-->
-          <div class="tab-pane" id="glyphicons">
+          <div class="tab-pane" id="ruleScan">
             <section class="content">
                 <!-- 图表，以后弄 -->
             </section>
@@ -74,9 +80,6 @@
     </div>
   </div>
 </section>
-
-
-
 
 
 <? 

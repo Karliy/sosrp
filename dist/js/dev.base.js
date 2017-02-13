@@ -11,7 +11,8 @@ var base;
 		init: function() {
 			var that = this;
 
-			that._cacheParam();
+			that._cacheParam()
+				._initcharts()
 
 			return that;
 		},
@@ -23,6 +24,35 @@ var base;
 			that._$users_module = $('#users_module').html();
 			that._$users_button = $('#users_button').html();
 
+			return that;
+		},
+
+		// 初始化图表类页面
+		_initcharts: function()
+		{
+			var that = this;
+			smarttang.createHcharts({
+				type: 'pie',
+				DomName: 'conventionalScan_levelcount',
+				dataName: '风险类型统计',
+				dataSource: [
+					['高危',193],
+					['中危',291],
+					['低危',21]
+				]
+			});
+
+			smarttang.createHcharts({
+				type: 'column',
+				DomName: 'conventionalScan_typecount',
+				dataSource: [
+					['SQL注入漏洞',19],
+					['XSS跨站脚本攻击',291],
+					['CSRF跨站请求伪造',211],
+					['LFI本地文件包含',821],
+					['RFI远程文件包含',11]
+				]
+			})
 			return that;
 		},
 
@@ -85,6 +115,7 @@ var base;
 
 	        return that;
 		}
+
 	};
 
     $(function() {

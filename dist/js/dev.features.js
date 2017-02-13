@@ -23,6 +23,94 @@ var myajax,alerts,huineng,smarttang;
         createButton: function(Btittle,Bicon,Bjquery)
         {
             return '<a data-toggle="tooltip" title="'+ Btittle +'" class="fa '+ Bicon +'" href="#" onclick="'+ Bjquery +';"></a> &nbsp;'
+        },
+
+        // 绘制hcharts图
+        createHcharts: function(params)
+        {
+            if (document.getElementById(params.DomName)){
+                var _$charts_values = '';
+                // 定义全局的values
+                var _$charts_global = {
+                    title: {
+                        text: ''
+                    },
+                    legend: {
+                        enabled: false
+                    }
+                };
+
+                if (params.type == 'pie'){
+                    _$charts_values = $.extend(_$charts_global,{
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false
+                        },
+
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer'
+                            }
+                        },
+                        series: [{
+                            type: 'pie',
+                            name: params.dataName,
+                            data: params.dataSource
+                        }]
+                    });
+
+                    
+                }else if(params.type == 'column'){
+                    if (params.pointFormatV == undefined){
+                        params.pointFormatV = '累计: <b>{point.y:.1f} 次</b>';
+                    }
+
+                    if (params.rotationV == undefined){
+                        params.rotationV = -65;
+                    }
+
+                    _$charts_values = $.extend(_$charts_global,{
+                        chart: {
+                            type: 'column'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: params.rotationV
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: ''
+                            }
+                        },
+
+                        tooltip: {
+                            pointFormat: params.pointFormatV
+                        },
+                        series: [{
+                            colorByPoint: true,
+                            data: params.dataSource,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y:.1f}',
+                            }
+                        }]
+                    });
+                }
+
+                // 初始化
+                $('#'+params.DomName).highcharts(_$charts_values);
+            }
         }
     };
 

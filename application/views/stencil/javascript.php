@@ -12,6 +12,8 @@
 <script src="<?=base_url().'dist/js/app.min.js'?>"></script>
 <!-- toastr.js -->
 <script src="<?=base_url().'dist/js/toastr.js'?>"></script>
+<!-- hchats.js -->
+<script src="<?=base_url().'dist/js/hchats.js'?>"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?=base_url().'dist/js/default.js'?>"></script>
 <!-- tables -->
