@@ -23,6 +23,8 @@ var base;
 
 			that._$users_module = $('#users_module').html();
 			that._$users_button = $('#users_button').html();
+			that._$conventionalScan_module = $('#conventionalScan_module').html();
+			that._$conventionalScan_button = $('#conventionalScan_button').html();
 
 			return that;
 		},
@@ -31,6 +33,7 @@ var base;
 		_initcharts: function()
 		{
 			var that = this;
+			// 网站漏洞扫描 - 常规漏洞扫描 - 风险类型统计
 			smarttang.createHcharts({
 				type: 'pie',
 				DomName: 'conventionalScan_levelcount',
@@ -42,6 +45,7 @@ var base;
 				]
 			});
 
+			// 网站漏洞扫描 - 常规漏洞扫描 - 风险级别统计
 			smarttang.createHcharts({
 				type: 'column',
 				DomName: 'conventionalScan_typecount',
@@ -112,6 +116,21 @@ var base;
 					}
 				}
 			});
+
+	        return that;
+		},
+
+		// 添加网站扫描任务(常规扫描)
+		webscanConventAdd_view: function()
+		{
+			var that = this;
+
+	        alerts.modal({
+	            title: '添加网站扫描',
+	            status: 'small',
+	            body: that._$conventionalScan_module,
+	            bottom: that._$conventionalScan_button
+	        });
 
 	        return that;
 		}

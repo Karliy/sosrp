@@ -29,7 +29,7 @@
             <section class="content">
                 <div class="box-header with-border">
                   <div class="box-title">
-                    <a href="#" onclick="base.webscanAdd_view();" class="btn btn-block btn-primary"><i class="fa fa-search-plus"></i> 添加网站扫描</a>
+                    <a href="#" onclick="base.webscanConventAdd_view();" class="btn btn-block btn-primary"><i class="fa fa-search-plus"></i> 添加网站扫描</a>
                   </div>
                 </div>
                 <table id="webscan_list" class="table table-bordered table-hover">
@@ -83,5 +83,5 @@
 
 
 <? 
-  include getcwd().'/application/views/template/userviews.php';
+  include getcwd().'/application/views/template/webscannerview.php';
 ?>
