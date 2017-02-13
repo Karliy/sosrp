@@ -1,4 +1,4 @@
-# SOSRP Security 安全平台(未完成)
+# SOSRP Security 安全平台
 
 [![Python 2.6|2.7](https://img.shields.io/badge/python-2.6|2.7-yellow.svg)](https://www.python.org/)  [![PHP 5.4](https://img.shields.io/badge/php-5.4-green.svg)](http://php.net/get/php-5.4.45.tar.bz2/from/a/mirror/)
 [![CodeIgniter 2.x](https://img.shields.io/badge/CodeIgniter-2.x-green.svg)](https://github.com/bcit-ci/CodeIgniter/archive/2.2.6.zip)
@@ -17,6 +17,16 @@ SOSRP 需求来源于当前互联网公司的迫切安全开发需求，将自�
 
 #### 大盘页 
 <img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/sosrp/master/demo/main.png">
+
+
+开发模式
+---
+#### 图例
+<img style="max-width:100%;" title="Run example" alt="Run example" src="https://raw.github.com/smarttang/sosrp/master/demo/func.png">
+
+1. 所有的func默认都是以一个router作为入口，方便前端调用统一，降低requests的压力；
+2. 统一用jump作为动作，方便路由选择；
+
 
 说明
 ---
