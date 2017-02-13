@@ -53,10 +53,10 @@ class Scannerjob extends CI_Controller
 
 		switch ($obj) {
 			case 'list':
-				echo json_encode($this->user_model->user_list());
+				echo json_encode($this->scanner_model->webscan_list());
 				break;
 			case 'status':
-				echo json_encode($this->user_model->user_status($id,$inputs->post('ustatus')));
+				echo json_encode($this->scanner_model->user_status($id,$inputs->post('ustatus')));
 				break;
 			case 'delete':
 				echo json_encode($this->user_model->user_delete($id));
