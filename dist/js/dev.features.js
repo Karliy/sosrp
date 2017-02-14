@@ -25,6 +25,30 @@ var myajax,alerts,huineng,smarttang;
             return '<a data-toggle="tooltip" title="'+ Btittle +'" class="fa '+ Bicon +'" href="#" onclick="'+ Bjquery +';"></a> &nbsp;'
         },
 
+        // 获得所有的参数
+        getParamts: function(initdom)
+        {
+            var _$keys = [
+                'input',
+                'select',
+                'textarea'
+            ];
+
+            var _$results = {};
+
+            for (var i in _$keys){
+                $(initdom + ' ' + _$keys[i]).each(function(){
+                    var _$name = $(this).prop('name');
+
+                    if (_$name != ""){
+                        _$results[$(this).prop('name')] = $(this).val();
+                    }
+                });
+            }
+
+            return _$results;
+        },
+
         // 绘制hcharts图
         createHcharts: function(params)
         {
