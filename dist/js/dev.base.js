@@ -25,6 +25,8 @@ var base;
 			that._$users_button = $('#users_button').html();
 			that._$conventionalScan_module = $('#conventionalScan_module').html();
 			that._$conventionalScan_button = $('#conventionalScan_button').html();
+			that._$vulscanPlugins_module = $('#vulscanPlugins_module').html();
+			that._$vulscanPlugins_button = $('#vulscanPlugins_button').html();
 
 			return that;
 		},
@@ -131,6 +133,26 @@ var base;
 	            body: that._$conventionalScan_module,
 	            bottom: that._$conventionalScan_button
 	        });
+
+	        return that;
+		},
+
+		// 添加扫描插件
+		vulscanPluginsAdd_view: function()
+		{
+			var that = this;
+
+	        alerts.modal({
+	            title: '添加扫描插件',
+	            status: 'small',
+	            body: that._$vulscanPlugins_module,
+	            bottom: that._$vulscanPlugins_button
+	        });
+
+			// 添加上传属性
+			$(".modal-body .filestyle")
+						.attr('type','file')
+						.filestyle({'buttonText':'选择插件'});
 
 	        return that;
 		}

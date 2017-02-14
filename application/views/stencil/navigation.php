@@ -152,6 +152,18 @@
       </li>
       <li class="treeview">
         <a href="#">
+          <i class="fa fa-flag-checkered"></i>
+          <span>策略管理</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="<?=site_url().'/main?path=scan_rules'?>"><i class="fa fa-circle-o"></i> 扫描策略</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
           <i class="fa fa-wrench"></i>
           <span>系统管理</span>
           <span class="pull-right-container">

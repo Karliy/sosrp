@@ -23,7 +23,8 @@ class Main extends CI_Controller
 			'default' => 'main/default.php',	// 大盘数据
 			'users' => 'main/users.php',	// 用户列表
 			'bugs' => 'main/bugs.php',	// bug管理
-			'web_vulscan' => 'main/webscanner.php' // web漏洞扫描
+			'web_vulscan' => 'main/webscanner.php', // web漏洞扫描
+			'scan_rules' => 'main/scanrules.php' // 扫描策略
 		);
 
 		if (empty($path_key) or !array_key_exists($path_key,$routes)){

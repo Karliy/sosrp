@@ -21,6 +21,8 @@
 <script src="<?=base_url().'dist/js/dataTables.bootstrap.min.js'?>"></script>
 <!-- select 2.0 -->
 <script src="<?=base_url().'dist/js/select.2.0.min.js'?>"></script>
+<!-- 上传插件 -->
+<script src="<?=base_url().'dist/js/bootstrap-filestyle.min.js'?>"></script>
 
 <script src="<?=base_url().'dist/js/dev.tables.js'?>"></script>
 <script src="<?=base_url().'dist/js/dev.features.js'?>"></script>

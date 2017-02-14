@@ -22,4 +22,11 @@
   <link rel="stylesheet" href="<?=base_url().'dist/css/bootstrap-select.min.css'?>">
   <!-- toastr -->
   <link rel="stylesheet" href="<?=base_url().'dist/css/toastr.min.css'?>">
+  <!-- 临时css，后面整合 -->
+  <style type="text/css">
+    .listAddbtn {
+      margin-left: -8px;
+      padding-right: 20px;
+    }
+  </style>
 </head>

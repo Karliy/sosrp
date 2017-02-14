@@ -91,10 +91,51 @@ var table_obj;  // 用于刷新对象
                 ]
             });   
         },
+        // 漏洞扫描插件列表
+        scanpluginlist: function()
+        {
+            this.adminTable({
+                ElementId: 'scanplugins_list',
+                remoteUrl: SYSTEM,
+                param: {'jump':'plugins','obj':'list'},
+                dataBases: [
+                    {data: 'id'},
+                    {data: 'vultype'},
+                    {data: 'createtime'},
+                    {data: 'uptime'},
+                    {
+                        data: 'pstatus',
+                        render: function(data,type,row,meta){
+                            var _$html = '<small class="label ';
+                            if (data == 1){
+                                _$html += 'bg-green">启用';
+                            }else{
+                                _$html += 'bg-red">禁用';
+                            }
+                            return _$html + '</small>';
+                        }
+                    }
+                ],
+                obJect: [
+                    {
+                        targets: 6,
+                        render: function(data, type, row, meta){
+                            return [
+                                smarttang.createButton('查看','fa-search','base.userOperat_data('+row.id+',\'status\')'),
+                                smarttang.createButton('切换状态','fa-exchange','base.userOperat_data('+row.id+',\'status\')'),
+                                smarttang.createButton('更新','fa-refresh','base.userOperat_data('+row.id+',\'status\')'),
+                                smarttang.createButton('删除','fa-trash-o','base.userOperat_data('+ row.id +',\'delete\')')
+                            ].join("");
+                        }
+                    }
+                ]
+            });
+        },
         // 初始化加载
         init: function()
         {
             this.userlist();
+            this.scanpluginlist();
         }
     }
 })(jQuery);
