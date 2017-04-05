@@ -19,16 +19,6 @@
                         <input type="text" class="form-control" name="pluginbanner" placeholder="一些特殊的标记，识别特殊的插件。">
                       </div>
                     </div>
-<!--                     <div class="form-group">
-                      <label for="spider" class="col-sm-3 control-label">爬虫模式</label>
-                      <div class="col-sm-9">
-                          <select name="spider" class="form-control">
-                              <option value="0">未选择</option>
-                              <option value="1">web1.0</option>
-                              <option value="2">web2.0</option>
-                          </select>
-                      </div>
-                    </div> -->
                   </div>
               </div>
             </div>

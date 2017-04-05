@@ -1,0 +1,12 @@
+{
+	"REDIS_IP":"10.211.55.12",
+	"REDIS_PORT":6379,
+	"CONF_CC_COUNT":100,
+	"CONF_CC_SECONDS":60,
+	"WAF_ERROR_LOG":"/tmp/waf.error.log",
+	"CONF_INTERCEPTION":"ON",
+	"CONF_REDIRECT_TYPE":"URL",
+	"CONF_REDIRECT_URL":"http://www.baidu.com/",
+	"CONF_REDIRECT_HTML":"<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8' /><meta http-equiv='Content-Language' content='zh-cn' /><title>403</title></head><body>
+		<h1 align='center'> 抱歉，您目前已经被封禁，请联系:security@sosrp.com解封。<a href='mailto:security@sosrp.com'>SOSRP安全团队</a></h1></body></html>"
+}

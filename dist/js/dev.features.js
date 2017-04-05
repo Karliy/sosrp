@@ -7,18 +7,13 @@
  * 用语实现一些封装后的方法
  */
 
-var myajax,alerts,huineng,smarttang;
+var myajax,alerts,smarttang;
 
 (function(){
     
     "use strict";
 
     smarttang = {
-        // 获得modal里面的form表单信息
-        getModal: function(formId) {
-            return huineng.getFormData($('.modal-body ' + formId));
-        },
-
         // 创建按钮
         createButton: function(Btittle,Bicon,Bjquery)
         {
@@ -36,14 +31,41 @@ var myajax,alerts,huineng,smarttang;
 
             var _$results = {};
 
+            // 普通键值的获取
             for (var i in _$keys){
                 $(initdom + ' ' + _$keys[i]).each(function(){
-                    var _$name = $(this).prop('name');
+                    var _$name = $(this).prop('name'),
+                        _$type = $(this).prop('type');
 
-                    if (_$name != ""){
+                    if (_$name != "" && _$type !='radio'){
                         _$results[$(this).prop('name')] = $(this).val();
                     }
                 });
+            }
+
+            // 特殊，比如单选多选
+            var _$radio = $(initdom).find('input[type="radio"]');
+            var _$rkey = undefined,
+                _$rkeyList = [];
+
+            for (var t = 0; t < _$radio.length; t++){
+                _$rkey = $(_$radio[t]).prop('name');
+
+                // 如果不存在，则放入列表中
+                if ($.inArray(_$rkey,_$rkeyList) == -1){
+                    _$rkeyList.push(_$rkey);
+                }
+            }
+
+            // 读from里面的内容找到对应的name值
+            var _$formSerialize = $(initdom + ' form').serialize().split('&');
+            for (var k = 0; k < _$formSerialize.length; k++){
+                var _$param = _$formSerialize[k].split('=');
+
+                // 对比name,如果存在则把键和值加上
+                if ($.inArray(_$param[0],_$rkeyList) > -1){
+                    _$results[_$param[0]] = _$param[1];
+                }
             }
 
             return _$results;
