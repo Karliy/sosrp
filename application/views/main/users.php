@@ -15,7 +15,7 @@
         <table id="userlist" class="table table-bordered table-hover">
           <thead>
           <tr>
-            <th>账号</th>
+            <th><input type="checkbox" class="checkall" /></th>
             <th>用户名称</th>
             <th>邮箱</th>
             <th>创建时间</th>

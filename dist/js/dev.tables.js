@@ -26,6 +26,7 @@ var table_obj;  // 用于刷新对象
                   "ordering": true,
                   "info": true,
                   "autoWidth": false,
+                  "select":true,
                   "ajax":{
                     url: params.remoteUrl,
                     type:'POST',
@@ -51,7 +52,12 @@ var table_obj;  // 用于刷新对象
                 remoteUrl: SYSTEM,
                 param: {'jump':'users','obj':'list'},
                 dataBases: [
-                    {data: 'id'},
+                    {
+                        data: 'id',
+                        render: function(data,type,row,meta){
+                            return '<input type="checkbox" class="checkall" />';
+                        }
+                    },
                     {data: 'fullname'},
                     {data: 'email'},
                     {data: 'createtime'},
